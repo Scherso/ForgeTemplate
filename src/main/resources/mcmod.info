@@ -1,0 +1,19 @@
+[
+    {
+        "modid": "${id}",
+        "name": "${name}",
+        "description": "A Forge Template",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "your link here",
+        "updateUrl": "",
+        "authorList": [
+            "Your Name"
+        ],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": [
+        ]
+    }
+]
