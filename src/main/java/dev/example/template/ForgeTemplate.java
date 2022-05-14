@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 @Mod(modid = ForgeTemplate.ID, name = ForgeTemplate.NAME, version = ForgeTemplate.VER)
 public class ForgeTemplate {
 
-    public static final String NAME = "@NAME@", VER = "@VERSION@", ID = "@ID@";
+    public static final String NAME = "@NAME@", VER = "@VER@", ID = "@ID@";
 
     @Mod.Instance(ID)
     public static ForgeTemplate Instance;
