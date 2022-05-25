@@ -41,8 +41,8 @@ repositories {
 }
 
 configurations {
-    shade
-    implementation.extendsFrom(shade)
+    include
+    implementation.extendsFrom(include)
 }
 
 dependencies {
@@ -82,10 +82,8 @@ sourceSets {
 }
 
 jar {
-    dependsOn configurations.shade
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    from(configurations.shade.collect { it.isDirectory() ? it : zipTree(it) }) {
+    dependsOn configurations.include
+    from(configurations.include.collect { it.isDirectory() ? it : zipTree(it) }) {
         def i = 0
         filesMatching("META-INF/NOTICE*") { name = "$name.${i++}" }
         filesMatching("META-INF/LICENSE*") { name = "$name.${i++}" }
@@ -94,9 +92,10 @@ jar {
     }
 
     manifest.attributes(
-            'FMLCorePluginContainsFMLMod': true,
             "ForceLoadAsMod": true,
             'ModSide': 'CLIENT',
-            "FMLCorePlugin": ""
+            "TweakOrder": "0"
+            // "FMLCorePlugin": "",  For Class transformers in Forge Modding
+            // 'FMLCorePluginContainsFMLMod': true
     )
 }
