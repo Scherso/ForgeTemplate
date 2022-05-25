@@ -1,5 +1,5 @@
 <h1 align="center">
-    Forge Template for 1.8.9
+    Forge Template for 1.12.2
 </h1>
 
 ## Build with [Gradle][gradle] using [Arch Loom][archloom]
