@@ -44,7 +44,8 @@ repositories {
 }
 
 configurations {
-    // Here you would add a dependency configuration 
+    include
+    implementation.extendsFrom(include)
 }
 
 dependencies {
@@ -52,6 +53,7 @@ dependencies {
     mappings("de.oceanlabs.mcp:mcp_stable:39-1.12")
     forge("net.minecraftforge:forge:1.12.2-14.23.5.2768")
     // Mixin 
+    include("org.spongepowered:mixin:${spongePoweredMixinVersion}")
     compileOnly("org.spongepowered:mixin:${spongePoweredMixinVersion}")
 }
 
@@ -86,9 +88,8 @@ sourceSets {
 }
 
 jar {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    from(configurations.shade.collect { it.isDirectory() ? it : zipTree(it) }) {
+    dependsOn configurations.include
+    from(configurations.include.collect { it.isDirectory() ? it : zipTree(it) }) {
         def i = 0
         filesMatching("META-INF/NOTICE*") { name = "$name.${i++}" }
         filesMatching("META-INF/LICENSE*") { name = "$name.${i++}" }
