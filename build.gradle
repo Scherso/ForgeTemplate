@@ -44,16 +44,15 @@ repositories {
 }
 
 configurations {
-    shade
-    implementation.extendsFrom(shade)
+    // Here you would add a dependency configuration 
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:1.12.2")
     mappings("de.oceanlabs.mcp:mcp_stable:39-1.12")
     forge("net.minecraftforge:forge:1.12.2-14.23.5.2768")
-    // Mixin
-    compileOnly(annotationProcessor("org.spongepowered:mixin:${spongePoweredMixinVersion}"))
+    // Mixin 
+    compileOnly("org.spongepowered:mixin:${spongePoweredMixinVersion}")
 }
 
 def mcVersion = "1.12.2"
@@ -87,7 +86,6 @@ sourceSets {
 }
 
 jar {
-    dependsOn configurations.shade
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     from(configurations.shade.collect { it.isDirectory() ? it : zipTree(it) }) {
