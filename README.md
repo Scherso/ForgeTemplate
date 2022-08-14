@@ -1,5 +1,5 @@
 <h1 align="center">
-    Forge Template for 1.8.9
+    Mixin Forge Template for 1.8.9
 </h1>
 
 ## Build with [Gradle][gradle] using [Arch Loom][archloom]
@@ -11,7 +11,7 @@
 
 - Make sure [Java 17][jdk] is installed on your computer
 
-1. Git clone the project: `git clone https://github.com/Scherso/ForgeTemplate/`
+1. Git clone the project: `git clone -b mixins https://github.com/Scherso/ForgeTemplate/`
 2. Run:
   - Unix in Terminal:
      
