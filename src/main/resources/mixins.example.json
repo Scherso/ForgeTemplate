@@ -1,0 +1,8 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "dev.example.template.mixin",
+  "refmap": "mixins.example.refmap.json",
+  "mixins": [
+    "MinecraftMixin"
+  ]
+}
